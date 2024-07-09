@@ -16,6 +16,7 @@ function checkFade() {
 // 스크롤 이벤트 리스너 등록
 document.addEventListener('scroll', checkFade);
 
+
 // 페이지 로드 시 초기 체크
 checkFade();
 
