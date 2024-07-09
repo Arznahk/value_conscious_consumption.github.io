@@ -6,23 +6,22 @@ body {
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 50px 0;
+    height: 300px; /* 스크롤 가능한 컨테이너의 높이 */
+    overflow-y: scroll; /* 세로 스크롤 활성화 */
+    position: relative; /* 자식 오브젝트의 위치 지정을 위해 */
 }
 
-.fade-in {
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+.object {
+    opacity: 0; /* 초기에 투명하게 설정 */
+    transition: opacity 1s ease; /* 페이드 인 효과를 위한 transition */
+    margin-top: 600px; /* 오브젝트를 컨테이너 아래에 위치시키기 위한 여유 공간 */
 }
 
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+/* 오브젝트가 화면 안에 들어왔을 때의 스타일링 */
+.object.fade-in {
+    opacity: 1;
 }
+
 
 h1 {
   font-size: 60px;
