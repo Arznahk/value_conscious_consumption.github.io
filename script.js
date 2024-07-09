@@ -18,6 +18,7 @@ function checkFadeElements() {
     });
 }
 
+
 // 스크롤 이벤트 리스너 등록
 window.addEventListener('scroll', checkFadeElements);
 
