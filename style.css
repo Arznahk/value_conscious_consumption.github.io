@@ -6,9 +6,14 @@ body {
 }
 
 .container {
-    height: 300px; /* 스크롤 가능한 컨테이너의 높이 */
+    height: 100vh; /* 뷰포트 전체 높이 */
     overflow-y: scroll; /* 세로 스크롤 활성화 */
     position: relative; /* 자식 오브젝트의 위치 지정을 위해 */
+}
+
+.scroll-trigger {
+    height: 100%; /* 뷰포트 전체 높이만큼 */
+    position: relative;
 }
 
 .object {
@@ -21,6 +26,7 @@ body {
 .object.fade-in {
     opacity: 1;
 }
+
 
 
 h1 {
