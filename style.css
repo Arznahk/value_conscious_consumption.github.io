@@ -5,28 +5,10 @@ body {
   background-color: #f0f0f0;
 }
 
-.container {
-    height: 100vh; /* 뷰포트 전체 높이 */
-    position: relative; /* 자식 오브젝트의 위치 지정을 위해 */
+#fade-in-element {
+  opacity: 0;
+  transition: opacity 1s ease; /* 투명도 변화를 부드럽게 하기 위한 transition */
 }
-
-.scroll-trigger {
-    height: 100%; /* 뷰포트 전체 높이만큼 */
-    position: relative;
-}
-
-.object {
-    opacity: 0; /* 초기에 투명하게 설정 */
-    transition: opacity 1s ease; /* 페이드 인 효과를 위한 transition */
-    margin-top: 600px; /* 오브젝트를 컨테이너 아래에 위치시키기 위한 여유 공간 */
-}
-
-/* 오브젝트가 화면 안에 들어왔을 때의 스타일링 */
-.object.fade-in {
-    opacity: 1;
-}
-
-
 
 h1 {
   font-size: 60px;
