@@ -1,18 +1,17 @@
-const object = document.querySelector('.object');
+// 요소의 시작 위치와 높이를 계산
+var fadeElement = document.getElementById('fade-in-element');
+var elementOffset = fadeElement.getBoundingClientRect().top;
+var elementHeight = fadeElement.offsetHeight;
+var windowHeight = window.innerHeight;
 
-function checkFade() {
-    const objectTop = object.getBoundingClientRect().top;
-    const objectBottom = object.getBoundingClientRect().bottom;
-    const viewportHeight = window.innerHeight;
+// 스크롤 이벤트 리스너 추가
+window.addEventListener('scroll', function() {
+  // 현재 스크롤 위치 계산
+  var scrollPosition = window.scrollY + windowHeight;
 
-    // 오브젝트가 화면 안에 들어왔는지 여부 확인
-    if (objectTop >= 0 && objectBottom <= viewportHeight) {
-        object.classList.add('fade-in');
-    }
-}
-
-// 스크롤 이벤트 리스너 등록
-document.addEventListener('scroll', checkFade);
-
-// 페이지 로드 시 초기 체크
-checkFade();
+  // 요소가 화면 안에 있고, 페이드 인이 시작되지 않은 경우
+  if (scrollPosition > elementOffset + elementHeight / 2 && !fadeElement.classList.contains('fade-in')) {
+    fadeElement.style.opacity = '1';
+    fadeElement.classList.add('fade-in');
+  }
+});
